@@ -1,0 +1,85 @@
+<!DOCTYPE html><html><head><title>R: Helper function to save the state of a running blast search</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+<script type="text/javascript">
+const macros = { "\\R": "\\textsf{R}", "\\code": "\\texttt"};
+function processMathHTML() {
+    var l = document.getElementsByClassName('reqn');
+    for (let e of l) { katex.render(e.textContent, e, { throwOnError: false, macros }); }
+    return;
+}</script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+    onload="processMathHTML();"></script>
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table style="width: 100%;"><tr><td>save_state {rCRUX}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Helper function to save the state of a running blast search</h2>
+
+<h3>Description</h3>
+
+<p>Helper function to save the state of a running blast search
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class='language-R'>save_state(
+  save_dir,
+  output_table,
+  unsampled_indices,
+  too_many_ns,
+  blastdbcmd_failed,
+  num_rounds,
+  blast_seeds_m
+)
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+<table>
+<tr style="vertical-align: top;"><td><code>save_dir</code></td>
+<td>
+<p>the directory to save in</p>
+</td></tr>
+<tr style="vertical-align: top;"><td><code>output_table</code></td>
+<td>
+<p>the outputs generated so far</p>
+</td></tr>
+<tr style="vertical-align: top;"><td><code>unsampled_indices</code></td>
+<td>
+<p>a vector of indices not yet sampled</p>
+</td></tr>
+<tr style="vertical-align: top;"><td><code>too_many_ns</code></td>
+<td>
+<p>a vector of indices that result
+in a fasta with too many Ns</p>
+</td></tr>
+<tr style="vertical-align: top;"><td><code>blastdbcmd_failed</code></td>
+<td>
+<p>a vector of indices not found in the local
+database</p>
+</td></tr>
+<tr style="vertical-align: top;"><td><code>num_rounds</code></td>
+<td>
+<p>the number of rounds so far</p>
+</td></tr>
+<tr style="vertical-align: top;"><td><code>blast_seeds_m</code></td>
+<td>
+<p>blast seeds table but with blast status update</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>Used by <code>run_blastdbcmd_blastn_and_aggregate_resuts()</code> to cash output
+data after completed blast searches.
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>rCRUX</em> version 0.0.1.000 ]</div>
+</div>
+</body></html>
